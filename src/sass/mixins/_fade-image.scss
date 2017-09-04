@@ -1,0 +1,7 @@
+@mixin fade-image {
+  opacity: 0;
+  transition: .6s opacity;
+  &.lazyloaded{
+    opacity: 1;
+  }
+}

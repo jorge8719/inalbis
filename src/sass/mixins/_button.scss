@@ -1,0 +1,138 @@
+
+
+// Button BEM Modifiers
+$button-sizes: (
+  tiny: (font-size: 12px, padding: 8px 15px),
+  small: (font-size: 14px, padding: 10px 20px),
+  default: (font-size: 16px, padding: 12px 25px),
+  big: (font-size: 18px, padding: 14px 30px)
+) !default;
+
+@mixin button-base(
+    $transition,
+    $margin,
+    $border-radius
+) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    -webkit-appearance: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: $transition;
+    outline: none;
+    @if $enable-rounded{
+        border-radius: 4px;
+    }
+    @if $margin {
+        margin: $margin;
+    }
+    @if $button-enabled-radius and $border-radius {
+        @include border-radius($border-radius);
+    }
+}
+
+@mixin button-style(
+    $color,
+    $background,
+    $color-hover,
+    $background-hover,
+    $transition
+) {
+    color: $color;
+    @if $background {
+        background: $background;
+    }
+    @if $button-enabled-hover {
+        @if $color-hover or $background-hover {
+            &:hover,
+            &.is-active,
+            &:active,
+            &:focus {
+                @if $button-color-hover {
+                    color: $color-hover;
+                }
+                @if $background-hover {
+                    background: $background-hover;
+                }
+                transition: $transition;
+            }
+        }
+    }
+}
+
+@mixin button-hollow($color, $border-width, $border-color) {
+    background: transparent;
+    border: $border-width solid $border-color;
+    color: $color;
+}
+
+@mixin button-hollow-style (
+    $color-hover,
+    $border-color-hover
+) {
+    @if $button-enabled-hover {
+        &.is-active,
+        &:active,
+        &:focus,
+        &:hover {
+            background: transparent;
+            border-color: $border-color-hover;
+            color: $color-hover;
+        }
+    }
+}
+
+@mixin button-size(
+    $modifiers,
+    $font-size: map-get(map-get($modifiers, default), font-size),
+    $padding: map-get(map-get($modifiers, default), padding)
+) {
+    font-size: $font-size;
+    @if $padding {
+        padding: $padding;
+    }
+}
+
+@mixin button(
+    $color: $button-color,
+    $background: $button-background,
+    $color-hover: $button-color-hover,
+    $background-hover: $button-background-hover,
+    $border-radius: $button-border-radius,
+    $border-width: $button-border-width,
+    $modifiers: $button-sizes,
+    $transition: $button-transition,
+    $margin: $button-margin,
+    $style: $button-style
+) {
+    @include button-base(
+        $border-radius: $border-radius,
+        $transition: $transition,
+        $margin: $margin
+    );
+    @if $style == solid {
+        @include button-style(
+            $color: $color,
+            $background: $background,
+            $color-hover: $color-hover,
+            $background-hover: $background-hover,
+            $transition: $transition
+        );
+    } @else if $style == hollow {
+        @include button-hollow(
+            $color: $color,
+            $border-width: $border-width,
+            $border-color: $color
+        );
+        @include button-hollow-style(
+            $color-hover: $color-hover,
+            $border-color-hover: $color-hover
+        );
+    }
+    @include button-size(
+        $modifiers
+    );
+}
+

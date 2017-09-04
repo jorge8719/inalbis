@@ -1,0 +1,59 @@
+.fonts-loaded{
+    body{
+        font-family: $base-font-family;
+    }
+}
+
+body {
+    -webkit-backface-visibility: hidden;
+    font-size: 15px;
+    color: $base-text-color;
+    font-family: $base-font-family;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+p {
+    margin: 0;
+    line-height: 20px;
+}
+
+i {
+    font-style: normal;
+}
+address{
+    font-style: normal;
+}
+iframe{
+    border: none;
+    overflow: hidden;
+}
+textarea{
+    max-width: 100%;
+    resize: none;
+}
+em{
+    font-size: 11px;
+}
+
+select::-ms-expand {
+  display: none;
+}
+ul{
+    @include reset-ul();
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    @include reset-heading();
+}
+img{
+    max-width: 100%;
+    display: block;
+}

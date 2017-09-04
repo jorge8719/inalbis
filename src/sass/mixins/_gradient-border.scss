@@ -1,0 +1,15 @@
+@mixin gradient-border ($c:$base-text-color, $right:"0"){
+  &:before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 1px;
+    height: 75%;
+    right: unquote($right);
+    @include align-position(y);
+  }
+  &:before{
+    background: linear-gradient(to top, transparent 0%, $c 50%, transparent 100%);
+  }
+
+}

@@ -1,0 +1,67 @@
+/************************************************************
+  Valores por defecto
+************************************************************/
+$base-text-color: #333;
+$base-font-family: 'Roboto', sans-serif;
+
+
+$s-layout__container-max-width: 1200px;
+$s-layout__container-padding-left: 40px;
+$s-layout__container-padding-right: 40px;
+
+/************************************************************
+  Button Config Base
+************************************************************/
+// Button Config
+$button-enabled-hover: true !default;
+$button-enabled-radius: true !default;
+
+// Button Default
+$button-color: #444 !default;
+$button-color-hover: #d6d6d6 !default;
+$button-background: #c6c6c6 !default;
+$button-background-hover: #444 !default;
+$button-margin: 5px !default;
+$button-border-radius: null !default;
+$button-border-width: 4px !default;
+$button-transition: all .6s !default;
+$button-style: solid !default; // solid | hollow
+
+
+/************************************************************
+  Colors
+************************************************************/
+$color-primary: #007279;
+$color-secondary: #C4D600;
+$color-tertiary: #009dbf;
+
+
+$color-quaternary: #C1DDDE;
+$color-quintary: #642667;
+$color-sextiary: #5bc3be;
+
+$color-complementary-1: #333;
+$color-complementary-2: #666;
+$color-complementary-3: #999;
+$color-complementary-4: #000;
+
+
+$color-white: #fff;
+$color-black: #333;
+
+$enable-rounded: true;
+
+
+
+/************************************************************
+  Estructura Básica de columnas
+************************************************************/
+
+
+
+/************************************************************
+  Z-index Control
+************************************************************/
+$cookies-z-index: 50;
+$layout--has-shadow-z-index: 5;
+

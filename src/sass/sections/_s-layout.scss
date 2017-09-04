@@ -1,0 +1,29 @@
+.layout{
+  position: relative;
+  &__container{
+    max-width: 1280px;
+    padding: 0 $s-layout__container-padding-right 0 $s-layout__container-padding-left;
+    margin: 0 auto;
+  }
+  &--has-shadow {
+    position: relative;
+    z-index: $layout--has-shadow-z-index;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+  }
+  &--has-bg{
+    &-1{
+      background-color: #f6f6f6;
+    }
+    &-2{
+      background-color: #F9FCFC;
+    }
+    &-3 {
+      background-color: $color-quintary;
+    }
+    &-img{
+      &-1{
+        background: url("https://d1yold88hsv6sw.cloudfront.net/resize/filters:quality(85):max_age(1209600)/s3/avoristravel/assets/img/graphics/aboutus/about-us-background-1.jpg") center center/cover;
+      }
+    }
+  }
+}

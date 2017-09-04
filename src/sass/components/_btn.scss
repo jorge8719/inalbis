@@ -1,0 +1,13 @@
+.btn {
+  @include reset-button();
+  @include button();
+  &__icon{
+    @include align-position(y);
+    left: 10px;
+  }
+  &--has-icon{
+    position: relative;
+    padding-left: 30px;
+    display: inline-flex;
+  }
+}

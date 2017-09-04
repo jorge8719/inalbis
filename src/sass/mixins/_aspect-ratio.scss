@@ -1,0 +1,29 @@
+@mixin aspect-ratio($width, $height,$simple:false) {
+    @if $simple != true{
+        position: relative;
+    }
+
+    &::before {
+        @if $simple == true {
+            padding-top: ($height / $width) * 100%;
+        }
+        @else {
+            padding-top: ($height / $width) * 100%;
+            display: block;
+            content: "";
+            width: 100%;
+        }
+
+
+    }
+    > img {
+        @if $simple != true {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            max-width: 100%;
+        }
+    }
+}

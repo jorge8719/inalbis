@@ -1,0 +1,15 @@
+@mixin reset-button {
+    font-size: 16px;
+    padding: 0;
+    background: none;
+    border: 0;
+    appearance: none;
+    cursor: pointer;
+
+    &.is-active,
+    &:active,
+    &:focus,
+    &:hover {
+        text-decoration: none;
+    }
+}

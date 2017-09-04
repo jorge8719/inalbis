@@ -1,0 +1,59 @@
+$base-font-size: 16px !default;
+/**
+ * Strips the unit from a given number-unit-combination and returns the number.
+ * @link: http://stackoverflow.com/a/12335841/1779999
+ * @usage: parse-int(10px) => 10
+ */
+@function parse-int($number) {
+     @return $number / ($number * 0 + 1);
+}
+/**
+ * Simply adds the rem unit to a given number. This is used twice in the
+ * function underneath, thus the need for a separate function.
+ */
+@function add-rem-unit($number) {
+     @return $number * 1rem;
+}
+/**
+ * Calculates rem values for a given list of (px or rem) values and a given rem
+ * base. Multiply base values for nested rem structures (last @usage example).
+ * @usage: rem(10px, 1.125) => .55556rem
+ *         rem(24px, .875rem) => 1.71429rem
+ *         rem(12px 0 7rem rgba(0, 0, 0, .7), 1.75) => .42857rem 0 4rem rgba(0, 0, 0, 0.7)
+ *         rem(12px) + rem(3rem) => 3.75rem
+ *         rem(23px, rem(53px)) => .43396rem
+ *         rem(24px, 1.5 * 1.125) => .88889rem
+ */
+@function rem($values, $rem-base: 1) {
+    $base-font-size: parse-int($base-font-size);
+    $rem-base: parse-int($rem-base);
+    $result: ();
+    @each $value in $values {
+        @if $value == 0 or type-of($value) != "number" {
+            $result: append($result, $value);
+        }
+        @else {
+            $unit: unit($value);
+            $value: parse-int($value);
+
+            @if $unit == "px" {
+                $result: append($result, add-rem-unit($value / ($base-font-size * $rem-base)));
+            }
+
+            @else if $unit == "rem" {
+                $result: append($result, add-rem-unit($value / $rem-base));
+            }
+        }
+    }
+    /**
+   * If only one value is provided, output the instance of that object instead
+   * of the whole list. This enables use cases like nested function invocations
+   * (e.g. `rem(2px, rem(15px))`) or additions/subtractions (e.g. `rem(5px) + rem(32px)`).
+   */
+    @if length($result) == 1 {
+         @return nth($result, 1);
+    }
+    @else {
+         @return $result;
+    }
+}

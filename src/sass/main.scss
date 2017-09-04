@@ -1,0 +1,66 @@
+/*******************************************************************************
+////////////////////////////// Commons ///////////////////////////////
+*******************************************************************************/
+
+/* Incluye los siguientes módulos:
+*
+* Mixins
+* Bower Components:
+*      - Normalize
+*      - Sass Tools
+*      - Sass Mq
+* General Variablesx
+* Global Variables
+* Base: Custom Reset
+* Header
+* Footer
+* Breadcrumbs
+* Newsletter pie
+* Suscribete fijo
+* Cookies
+* Paginas intermedias del pie
+*/
+
+
+
+@import "global";
+
+
+
+//Bower Components
+//Gel Layout Defaults
+@import 'bower_components/gel-sass-tools/sass-tools';
+//MQ Generator
+@import 'bower_components/sass-mq/mq';
+//Generic Reset
+@import "bower_components/normalize-scss/normalize.scss";
+
+
+
+// Mixins
+@import "mixins/glob";
+
+// Base: Custom Reset
+@import "base/glob";
+
+
+/*Vendors*/
+
+@import "vendor/slick-theme";
+@import "vendor/slick";
+
+
+
+@import "animations/glob";
+
+@import "components/glob";
+
+@import "modules/glob";
+
+@import "sections/glob";
+
+// Helpers
+@import "helpers/glob";
+
+
+

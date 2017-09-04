@@ -1,0 +1,23 @@
+.cookies{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: rgba($color-black,.8);
+  color: $color-white;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  transform: translateY(100%);
+  transition: .6s transform;
+  z-index: $cookies-z-index;
+  &__text{
+    padding-right: 20px;
+  }
+  &__btn{
+
+  }
+  .cookies--is-active &{
+    transform: translateY(0);
+  }
+}

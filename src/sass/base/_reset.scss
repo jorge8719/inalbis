@@ -1,0 +1,57 @@
+/*******************************************************************************
+////////////////////////////// Table of Contents ///////////////////////////////
+*******************************************************************************/
+
+// 1. Reset
+
+/*******************************************************************************
+1. Reset
+*******************************************************************************/
+
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+html{
+    -webkit-tap-highlight-color: transparent;
+}
+
+body{
+    padding: 0;
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+figure {
+    margin: 0;
+}
+
+picture{
+    display: block;
+    font-size: 0;
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+.lazy{
+    opacity: 0;
+
+}
+.loaded{
+    opacity: 1;
+    transition: .6s opacity;
+    z-index: 1;
+}
+area{
+    outline: none;
+}

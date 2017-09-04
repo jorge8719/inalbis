@@ -1,68 +1,58 @@
 {
-    "paths" : {
-        "src" : {
-            "root" : "./src/",
-            "pages" : "./src/html/pages/",
-            "layouts" : "./src/html/layouts/",
-            "partials" : "./src/html/partials/",
-            "helpers" : "./src/html/helpers/",
-            "data" : "./src/html/data/",
-            "assets" : "./src/assets/",
-            "sass" : "./src/sass/",
-            "commonsSass" : "./src/sass/constructors/common/",
-            "productSass" : "./src/sass/constructors/",
-            "js" : "./src/assets/js/",
-            "jsVendor" : "./src/assets/js/vendor/",
-            "img" : "./src/assets/img/",
-            "fonts" : "./src/assets/fonts/",
-            "copyFiles": [
-                "./src/assets/**/*",
-                "!./src/assets/img/**/*",
-                "!./src/assets/js/custom.js"
-
-            ],
-            "documentation" : "./src/html/pages/documentation/"
-        },
-        "dist" : {
-            "root" : "./dist/",
-            "assets" : "./dist/assets/",
-            "css" : "./dist/assets/css/",
-            "commonsCss" : "./dist/assets/css/commons/",
-            "productCss" : "./dist/assets/css/",
-            "js" : "./dist/assets/js/",
-            "jsVendor" : "./dist/assets/js/vendor/",
-            "img" : "./dist/assets/img/",
-            "fonts" : "./dist/assets/fonts/"
-        },
-        "documentation" : "./doc/"
+  "paths": {
+    "src": {
+      "root": "./src/",
+      "pages": "./src/html/pages/",
+      "layouts": "./src/html/layouts/",
+      "partials": "./src/html/partials/",
+      "helpers": "./src/html/helpers/",
+      "data": "./src/html/data/",
+      "assets": "./src/assets/",
+      "sass": "./src/sass/",
+      "img": "./src/assets/img/",
+      "fonts": "./src/assets/fonts/",
+      "copyFiles": [
+        "./src/assets/**/*",
+        "!./src/assets/img/**/*",
+        "!./src/assets/js/**"
+      ],
+      "jsVendor": [
+        "./src/assets/js/vendor/jquery-2.2.4.min.js",
+        "./src/assets/js/vendor/lazysizes.min.js"
+      ],
+      "jsCustom": [
+        "./src/assets/js/functions.js",
+        "./src/assets/js/custom.js"
+      ]
     },
-    "watch" : {
-        "pages" : [
-            "./src/html/pages/**/*.{html,hbs,handlebars}",
-            "!./src/html/pages/documentation/**/*"
-        ],
-        "layoutsPartials" : "src/html/{layouts,partials}/**/*.{html,hbs,handlebars}",
-        "assets" : [
-            "./src/assets/**/*",
-            "!./src/assets/js/vendor/**/*.js",
-            "!./src/assets/js/documentation/**/*.js"
-        ],
-        "sass" : [
-            "./src/sass/**/*.scss",
-            "!./src/sass/documentation.scss"
-        ],
-        "sassDocumentation" : [
-            "./src/sass/documentation.scss",
-            "!./src/sass/**/*.scss"
-        ],
-        "img" : "./src/assets/img/**/*",
-        "js" : "./src/assets/js/",
-        "jsVendor" : "./src/assets/js/vendor/**/*.js",
-        "jsDocumentation" : "./src/assets/js/documentation/**/*",
-        "pegasus" : [
-            "./src/assets/js/pegasusUI.js",
-            "./src/assets/js/pegasusUtils.js"
-        ],
-        "documentation" : "./doc/**/*.md"
+    "dist": {
+      "root": "./dist/",
+      "assets": "./dist/assets/",
+      "css": "./dist/assets/css/",
+      "jsVendor": "./dist/assets/js/vendor/",
+      "img": "./dist/assets/img/",
+      "fonts": "./dist/assets/fonts/",
+      "jsCustom": "./dist/assets/js/"
     }
+  },
+  "watch": {
+    "pages": [
+      "./src/html/pages/**/*.{html,hbs,handlebars}"
+    ],
+    "layoutsPartials": "src/html/{layouts,partials}/**/*.{html,hbs,handlebars}",
+    "assets": [
+      "./src/assets/**/*",
+      "!./src/assets/js/vendor/**/*.js"
+    ],
+    "sass": [
+      "./src/sass/**/*.scss"
+    ],
+    "img": "./src/assets/img/**/*",
+    "jsVendor": "./src/assets/js/vendor/**/*.js",
+    "jsCustom": "./src/assets/js/"
+  }
 }
+
+
+
+
