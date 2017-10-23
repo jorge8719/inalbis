@@ -1,0 +1,33 @@
+.field{
+  margin-bottom: 15px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  &__label{
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: #666;
+  }
+  &__input{
+    width: 100%;
+    background-color: $color-white;
+    border: none;
+    height: 36px;
+    padding: 3px 5px;
+    line-height: 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    color: #666;
+    &--text{}
+    &--select{}
+    &--number{}
+    &--textarea{
+      min-height: 100px;
+      max-width: 100%;
+      padding: 10px;
+      height: auto;
+      resize: vertical;
+    }
+  }
+}

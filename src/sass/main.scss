@@ -35,6 +35,8 @@
 //Generic Reset
 @import "bower_components/normalize-scss/normalize.scss";
 
+@import "bower_components/gel-grid/grid";
+
 
 
 // Mixins
@@ -48,6 +50,7 @@
 
 @import "vendor/slick-theme";
 @import "vendor/slick";
+@import "vendor/animate";
 
 
 
@@ -61,6 +64,3 @@
 
 // Helpers
 @import "helpers/glob";
-
-
-

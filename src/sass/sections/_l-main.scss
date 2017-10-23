@@ -1,0 +1,30 @@
+.l-main{
+  &__container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  &__header{}
+  &__footer{}
+  &__section{
+
+  }
+  &--has-padding{
+    &-top{
+
+    }
+    &-bottom{}
+  }
+  &--has-bg{
+    &-primary{
+      background-color: $color-primary;
+    }
+    &-secondary{}
+    &-complementary{
+      &-1{}
+      &-2{}
+      &-3{}
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.c-icon{
+  font-family: $base-vectorial-fonts-file-name;
+  @each $name, $value in $base-icons {
+      &-#{$name} {
+          &::before {
+              content: "#{$value}";
+          }
+      }
+  }
+}

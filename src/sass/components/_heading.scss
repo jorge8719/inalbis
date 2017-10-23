@@ -1,0 +1,28 @@
+.heading{
+  text-align: center;
+  &__title{
+    font-family: "Open Sans",sans-serif;
+    font-size: 36px;
+    line-height: 46px;
+    font-weight: 600;
+  }
+  &__subtitle{
+    font-family: "Open Sans",sans-serif;
+    font-size: 26px;
+    line-height: 32px;
+    margin-top: 5px;
+  }
+  &__description{
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  @each $size in map-remove($text-base-size-modifiers, default) {
+    &--#{nth($size, 1)}{
+      font-size: map-get(nth($size, 2), font-size);
+      padding: map-get(nth($size, 2), padding);
+    }
+  }
+}
+
+

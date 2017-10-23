@@ -5,6 +5,12 @@
     @include align-position(y);
     left: 10px;
   }
+
+  &--primary{
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
   &--has-icon{
     position: relative;
     padding-left: 30px;

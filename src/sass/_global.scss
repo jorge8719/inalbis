@@ -1,8 +1,13 @@
+/*******************************************************************************
+Fonts
+*******************************************************************************/
+$gel-grid-enable--markup-output: true;
 /************************************************************
   Valores por defecto
 ************************************************************/
 $base-text-color: #333;
-$base-font-family: 'Roboto', sans-serif;
+$base-font-family: 'Open Sans', sans-serif;
+
 
 
 $s-layout__container-max-width: 1200px;
@@ -31,16 +36,13 @@ $button-style: solid !default; // solid | hollow
 /************************************************************
   Colors
 ************************************************************/
-$color-primary: #007279;
+$color-primary: #37a08f;
 $color-secondary: #C4D600;
 $color-tertiary: #009dbf;
 
 
-$color-quaternary: #C1DDDE;
-$color-quintary: #642667;
-$color-sextiary: #5bc3be;
 
-$color-complementary-1: #333;
+$color-complementary-1: #444;
 $color-complementary-2: #666;
 $color-complementary-3: #999;
 $color-complementary-4: #000;
@@ -65,3 +67,4 @@ $enable-rounded: true;
 $cookies-z-index: 50;
 $layout--has-shadow-z-index: 5;
 
+$mega-menu-z-index: 100;

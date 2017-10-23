@@ -1,11 +1,12 @@
 .fonts-loaded{
     body{
-        font-family: $base-font-family;
+
     }
 }
 
 body {
     -webkit-backface-visibility: hidden;
+    font-family: $base-font-family;
     font-size: 15px;
     color: $base-text-color;
     font-family: $base-font-family;

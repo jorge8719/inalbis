@@ -156,7 +156,7 @@ function vendorScripts() {
 function customScripts() {
     return gulp.src(config.paths.src.jsCustom)
         .pipe(concat('custom.js'))
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest(config.paths.dist.jsCustom));
 }
 

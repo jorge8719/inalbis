@@ -4,21 +4,15 @@
 	<head>
 		{{> head}}
 	</head>
-	<body data-page={{page}}>
+	<body class="l-main" data-page="{{page}}">
 
 	{{> header}}
-
-
-	<section class="s-main-layout">
-		<main class="s-main-layout__content">
+		<main class="l-main__content">
 			{{> body}}
 		</main>
-	</section>
-
 	{{> footer}}
 
 
-	{{> cookies}}
 
 	</body>
 	{{> scripts}}

@@ -1,0 +1,62 @@
+@import "../global";
+
+
+
+/************************************************************
+  Generación helpers
+************************************************************/
+
+/*** Global params ***/
+$text-base-size: 16px;
+
+/*** Maps ***/
+$text-base-size-modifiers: (
+        xtiny: (font-size: $text-base-size /  1.6),
+        tiny: (font-size: $text-base-size /  1.4),
+        small: (font-size: $text-base-size /  1.2),
+        default: (font-size: $text-base-size),
+        medium: (font-size: $text-base-size * 1.2),
+        big: (font-size: $text-base-size * 1.4),
+        xbig: (font-size: $text-base-size * 1.6)
+) !default;
+
+$text-base-transforms-modifiers: (
+        center: (text-align: center),
+        uppercase: (text-transform: uppercase),
+        capitalize: (text-transform: capitalize)
+) !default;
+
+$color-primary-modifiers: (
+        primary: (color: $color-primary,background-color: $color-primary),
+        secondary: (color: $color-secondary,background-color: $color-secondary),
+        tertiary: (color: $color-tertiary,background-color: $color-tertiary),
+) !default;
+
+
+
+
+//Tamaño fuente de texto
+@each $size in map-remove($text-base-size-modifiers, default) {
+  .font-size-#{nth($size, 1)}{
+    font-size: map-get(nth($size, 2), font-size);
+  }
+}
+//Text Transform
+@each $size in map-remove($text-base-transforms-modifiers, default) {
+  .text-#{nth($size, 1)}{
+    text-transform: map-get(nth($size, 2), text-transform);
+  }
+  .text-#{nth($size, 1)}{
+    text-align: map-get(nth($size, 2), text-align);
+  }
+}
+
+//Transformaciones de color
+@each $size in map-remove($color-primary-modifiers, default) {
+  .col-#{nth($size, 1)}{
+    color: map-get(nth($size, 2), color);
+  }
+  .bg-#{nth($size, 1)}{
+    background-color: map-get(nth($size, 2), background-color);
+  }
+}
